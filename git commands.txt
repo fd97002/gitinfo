@@ -34,3 +34,29 @@ Merge conflict (Newline characters between Windows and Unix systems)
 Context: Whenever we hit the "Enter" key on the keyboard, we are actually telling the computer to insert an invisible character into our text file to indicate to the computer that there should be a new line. Unix systems adds one character called the "line feed" character or LF or \n while Windows systems adds two characters, "carriage return" and "line feed" or CRLF or \r\n.
 Caroline's files have LF because her files were edited on Mac OSX, which uses LF. If a Windows user were to edit Caroline's files, the Windows text editor might convert all LF to CRLF to make editing files possible. When the Windows user merges her file with Caroline's files, a merge conflict will result due to the different LF and CRLF characters.
 To fix this, Windows users should set the global autocrlf attribute to true: git config --global core.autocrlf true. More information can be found here: https://help.github.com/articles/dealing-with-line-endings/#platform-all
+
+
+
+//Creating a new repo
+"Create Repository" on git
+Go to relevant directory on local machine and
+1. git init
+2. git remote add [remote name] [gitpath] //e.g got remote add origin https://github.com/fd97002/gitinfo.git  //creates a remote
+3. git remote //list down remotes
+4. git push [remote name] [branch name] //e.g. push branch "master" to remote "origin"
+
+//…or create a new repository on the command line
+
+echo "# gitinfo" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/fd97002/gitinfo.git
+git push -u origin master
+
+//…or push an existing repository from the command line
+
+git remote add origin https://github.com/fd97002/gitinfo.git
+git push -u origin master
+
+// more info
